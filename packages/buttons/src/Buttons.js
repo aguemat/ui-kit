@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { SmallText } from "@uikit/typography";
+import { SmallText } from "@aguemat/typography";
 
 export const ButtonSmall = ({ text, ...props }) => {
   return (

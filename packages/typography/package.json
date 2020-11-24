@@ -1,5 +1,5 @@
 {
-  "name": "@uikit/typography",
+  "name": "@aguemat/typography",
   "version": "1.0.3",
   "description": "Base fonts",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "gitHead": "249b173f30790c36d69426daf2a15bee8cc4e0b7",
+  "gitHead": "97437e08c90dc0164814fcb7993ef5ca065d194a",
   "publishConfig": {
     "access": "public"
   }
