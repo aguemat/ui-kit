@@ -1,6 +1,6 @@
 {
   "name": "@aguemat/buttons",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Button components",
   "main": "dist/index.js",
   "module": "src/index.js",
@@ -9,7 +9,7 @@
     "CHANGELOG.md"
   ],
   "dependencies": {
-    "@aguemat/typography": "^1.0.3"
+    "@aguemat/typography": "^1.0.4"
   },
   "author": "",
   "license": "MIT",
