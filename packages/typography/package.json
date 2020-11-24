@@ -1,0 +1,13 @@
+{
+  "name": "@uikit/typography",
+  "version": "1.0.1",
+  "description": "Base fonts",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "author": "",
+  "license": "MIT"
+}
