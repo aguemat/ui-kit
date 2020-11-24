@@ -1,6 +1,6 @@
 {
   "name": "@uikit/typography",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Base fonts",
   "main": "dist/index.js",
   "module": "src/index.js",
