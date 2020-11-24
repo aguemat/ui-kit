@@ -9,5 +9,9 @@
     "CHANGELOG.md"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "249b173f30790c36d69426daf2a15bee8cc4e0b7",
+  "publishConfig": {
+    "access": "public"
+  }
 }
