@@ -1,2 +1,3 @@
-node_modules
-packages/simplecomponents/node_modules
+node_modules/
+lib/
+dist/
