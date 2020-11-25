@@ -1,7 +1,7 @@
 {
-  "name": "@aguemat/common",
-  "version": "1.0.2",
-  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "name": "@aguemat/react-basic-components",
+  "version": "1.0.0",
+  "description": "Basic react componets",
   "keywords": [],
   "author": "aguemat",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "@babel/node": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "styled-components": "^5.2.1"
   }
 }
