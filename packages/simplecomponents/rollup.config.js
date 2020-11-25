@@ -36,7 +36,7 @@ export default {
     resolve(),
     babel({
       exclude: "node_modules/**",
-      presets: ["@babel/env", "@babel/preset-react"],
+      presets: ["@preset-env", "@babel/preset-react"],
     }),
     commonjs(),
   ],
