@@ -5,6 +5,7 @@
   "keywords": [],
   "author": "aguemat",
   "license": "MIT",
+  "module": "lib/index.js",
   "main": "src/index.js",
   "directories": {
     "lib": "lib",
