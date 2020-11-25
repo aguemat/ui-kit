@@ -1,6 +1,7 @@
 import typescript from "rollup-plugin-typescript2";
 import commonjs from "rollup-plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
+import babel from "rollup-plugin-babel";
 // import postcss from 'rollup-plugin-postcss-modules'
 import postcss from "rollup-plugin-postcss";
 import resolve from "rollup-plugin-node-resolve";
@@ -33,9 +34,9 @@ export default {
     url(),
     svgr(),
     resolve(),
-    typescript({
-      rollupCommonJSResolveHack: true,
-      clean: true,
+    babel({
+      exclude: "node_modules/**",
+      presets: ["@babel/env", "@babel/preset-react"],
     }),
     commonjs(),
   ],
