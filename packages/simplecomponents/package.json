@@ -23,9 +23,6 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {
-    "undefined": "/Users/designer59/Desktop/npm-package/addreact"
-  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
@@ -56,5 +53,5 @@
   "files": [
     "dist"
   ],
-  "gitHead": "72ab127f6d86dd2424e59ed2238c906e1e264023"
+  "gitHead": "0e3bf307d510a3d2cc28dab05c46bd3918b7f92b"
 }
