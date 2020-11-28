@@ -1,7 +1,7 @@
 {
-  "name": "@aguemat/react-basic-components",
+  "name": "@aguemat/react-forms-components",
   "version": "1.0.2",
-  "description": "Basic react componets",
+  "description": "forms react componets",
   "private": false,
   "keywords": [],
   "author": "aguemat",

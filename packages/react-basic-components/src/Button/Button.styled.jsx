@@ -1,28 +1,36 @@
-import styled from "styled-components";
-import { defaultTheme } from "../utils/themes/defaultTheme";
+import styled, { css } from "styled-components";
+import { Button } from "react-bootstrap";
 
-export const ButtonStyled = styled.button`
-  color: ${({ theme, themeStyle }) => theme.buttons[themeStyle].color};
-  background-color: ${({ theme, themeStyle }) =>
-    theme.buttons[themeStyle].backgroundColor};
-  border-color: ${({ theme, themeStyle }) =>
-    theme.buttons[themeStyle].borderColor};
+export const ButtonStyled = styled(Button)`
+  ${({ theme, variant }) => {
+    if (theme && Object.keys(theme).length > 0) {
+      return css`
+        color: ${theme.buttons[variant].color} !important;
+        background-color: ${theme.buttons[variant].backgroundColor} !important;
+        border-color: ${theme.buttons[variant].borderColor} !important;
 
-  &:hover {
-    color: ${({ theme, themeStyle }) => theme.buttons[themeStyle].colorHover};
-    background-color: ${({ theme, themeStyle }) =>
-      theme.buttons[themeStyle].backgroundColorHover};
-    border-color: ${({ theme, themeStyle }) =>
-      theme.buttons[themeStyle].borderColorHover};
-  }
+        &:hover {
+          color: ${theme.buttons[variant].colorHover} !important;
+          background-color: ${theme.buttons[variant]
+            .backgroundColorHover} !important;
+          border-color: ${theme.buttons[variant].borderColorHover} !important;
+        }
 
-  &:focus {
-    color: ${({ theme, themeStyle }) => theme.buttons[themeStyle].color};
-    background-color: ${({ theme, themeStyle }) =>
-      theme.buttons[themeStyle].backgroundColor};
-    border-color: ${({ theme, themeStyle }) =>
-      theme.buttons[themeStyle].borderColor};
-    box-shadow: 0 0 0 0rem rgba(38, 143, 255, 0.5);
-  }
+        &:focus {
+          color: ${theme.buttons[variant].color} !important;
+          background-color: ${theme.buttons[variant]
+            .backgroundColor} !important;
+          border-color: ${theme.buttons[variant].borderColor} !important;
+          box-shadow: 0 0 0 0rem rgba(38, 143, 255, 0.5);
+          outline: none !important;
+        }
+
+        &:active {
+          outline: none !important;
+        }
+      `;
+    } else {
+      return css``;
+    }
+  }}
 `;
-ButtonStyled.defaultProps = { theme: defaultTheme };

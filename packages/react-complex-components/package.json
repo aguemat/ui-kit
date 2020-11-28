@@ -1,7 +1,7 @@
 {
-  "name": "@aguemat/react-basic-components",
+  "name": "@aguemat/react-complex-components",
   "version": "1.0.2",
-  "description": "Basic react componets",
+  "description": "Complex react componets",
   "private": false,
   "keywords": [],
   "author": "aguemat",
@@ -22,8 +22,11 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
+    "@aguemat/react-basic-components": "^1.0.2",
+    "@aguemat/react-forms-components": "^1.0.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "yup": "^0.31.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
