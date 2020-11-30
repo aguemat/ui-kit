@@ -63,11 +63,7 @@ class InputCheck extends React.Component {
             {withLink && withLink(form.values)}
           </label>
         </div>
-        <ErrorMessage
-          name={name}
-          component={TextErrorMessage}
-          type={typeStyleErrorMessage || "default"}
-        />
+        <ErrorMessage name={name} component={TextErrorMessage} type="default" />
       </div>
     );
   }
