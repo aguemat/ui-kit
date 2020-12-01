@@ -68,16 +68,6 @@ const LoginForm = (props) => {
               )}
             </div>
           </div>
-          <div className="row">
-            <div className="col-12">
-              <Field
-                id="termAndConditions"
-                labelField={t("forms.register.labels.termAndConditions")}
-                name="termAndConditions"
-                component={InputCheck}
-              />
-            </div>
-          </div>
           <ButtonsContainer className="text-center">
             <Button
               type="submit"

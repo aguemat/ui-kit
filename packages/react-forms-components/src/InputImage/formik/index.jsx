@@ -45,7 +45,11 @@ class InputImage extends React.Component {
         </div>
       );
     } else {
-      return <div className={`preview-noData-${className}`}>{textNoData}</div>;
+      return (
+        <div className={`preview-noData-${className}`}>
+          {textNoData || "No data"}
+        </div>
+      );
     }
   }
 
@@ -175,12 +179,12 @@ class InputImage extends React.Component {
               this.handleChangeImage(val, val2);
             }}
             imgExtension={allowExtensions || [".jpg", ".png"]}
-            singleImage={singleImage}
-            withIcon={withIcon}
-            withLabel={withLabel}
+            singleImage={singleImage || false}
+            withIcon={withIcon || false}
+            withLabel={withLabel || false}
             maxFileSize={maxFileSize || 1000000}
-            fileSizeError={textFileSizeError}
-            fileTypeError={textFileTypeError}
+            fileSizeError={textFileSizeError || "Error file size"}
+            fileTypeError={textFileTypeError || "Extension not allow"}
           />
         </div>
         <ErrorMessage
