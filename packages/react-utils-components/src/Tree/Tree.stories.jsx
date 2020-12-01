@@ -1,6 +1,5 @@
 import React from "react";
 import Tree from ".";
-import "./Tree.style.css";
 
 export default {
   title: "Utils/Tree",
@@ -12,7 +11,11 @@ const data = [
   { id: "4", parent: "2", text: "Text 04", title: "Title 04" },
 ];
 
-const parent = { id: "1", text: "Test Tree", title: "Test Title" };
+const parent = {
+  id: "1",
+  text: "Test Tree",
+  title: "Test Title",
+};
 
 const Template = (args) => <Tree {...args} />;
 export const Simple = Template.bind({});
@@ -23,4 +26,5 @@ Simple.args = {
   parentNode: parent,
   idNodeTitle: "title",
   idNodeText: "text",
+  idImageNode: "image",
 };

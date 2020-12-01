@@ -82,11 +82,18 @@ class Tree extends Component {
       idNode,
       idNodeTitle,
       idNodeText,
+      idImageNode,
     } = this.props;
     let nodes = [];
     nodes.push(this.configTreeNodes());
     nodes.push(
-      this.generateRootNode(parentNode, idNode, idNodeTitle, idNodeText)
+      this.generateRootNode(
+        parentNode,
+        idNode,
+        idNodeTitle,
+        idNodeText,
+        idImageNode
+      )
     );
 
     if (data && data.length > 0 && parentNode) {
@@ -136,6 +143,7 @@ class Tree extends Component {
           return data.map((node) => {
             return (
               <BasicNode
+                key={node[idNode]}
                 node={node}
                 idNode={idNode}
                 idNodeTitle={idNodeTitle || "title"}
