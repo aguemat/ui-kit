@@ -6,7 +6,6 @@ import Raphael from "raphael";
 import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BasicNode from "./components/BasicNode";
-import "./Tree.style.css";
 
 window.Raphael = Raphael;
 

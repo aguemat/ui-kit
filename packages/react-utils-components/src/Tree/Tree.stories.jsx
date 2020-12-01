@@ -1,5 +1,6 @@
 import React from "react";
 import Tree from ".";
+import "./Tree.style.css";
 
 export default {
   title: "Utils/Tree",
