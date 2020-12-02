@@ -129,6 +129,7 @@ class Tree extends Component {
       if (data && data.length > 0 && parentNode) {
         return data.map((node) => {
           return React.cloneElement(children, {
+            key: node[idNode],
             node: node,
             idNode: idNode,
             idNodeText: idNodeText,
