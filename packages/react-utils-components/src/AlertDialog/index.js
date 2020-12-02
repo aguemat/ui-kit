@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export default showDialog = (
+export const showDialog = (
   title,
   text,
   icon,

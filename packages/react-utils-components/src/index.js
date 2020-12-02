@@ -1,4 +1,4 @@
 export { default as Tree } from "./Tree";
 export { default as DashboardRow } from "./DashboardRow";
 export { default as DashBoardItem } from "./DashBoardItem";
-export { default as ShowDialog } from "./AlertDialog";
+export { showDialog } from "./AlertDialog/index";
