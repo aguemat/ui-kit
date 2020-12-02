@@ -57,7 +57,6 @@ export const ItemTitle = styled.div`
   padding: 0.2rem 0.4rem;
   font-weight: 600;
   font-size: ${({ titleSize }) => (titleSize ? `${titleSize}rem` : "0.75rem")};
-  height: 15%;
 `;
 
 export const ItemIconTitle = styled.i`
@@ -66,10 +65,4 @@ export const ItemIconTitle = styled.i`
 
 export const ItemBody = styled.div`
   overflow: hidden;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 85%;
 `;
