@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import NumberFormat from "react-number-format";
+import { TextareaStyled } from "./InputTextarea.styled";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class InputText extends React.Component {
+class InputTextarea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,16 +22,13 @@ class InputText extends React.Component {
       id,
       labelField,
       placeholder,
-      fieldType,
       className,
       divClassName,
       readOnly,
       mandatory,
-      maxLength,
       visible,
       tooltip,
-      decimals,
-      typeStyleErrorMessage,
+      rows,
     } = this.props;
 
     return (
@@ -58,69 +55,42 @@ class InputText extends React.Component {
           </div>
         )}
         <div className={`${divClassName} no-padding`}>
-          {fieldType === "number" ? (
-            <>
-              <NumberFormat
-                id={id}
-                name={name}
-                maxLength={maxLength || 255}
-                placeholder={placeholder}
-                className={`inputForm inputText ${className}`}
-                readOnly={readOnly}
-                decimalScale={decimals || undefined}
-                value={this.state.value}
-                onChange={async (event) => {
-                  this.handlerOnchangeValue(event);
-                  if (onChange) {
-                    onChange(event);
-                  }
-                }}
-              />
-            </>
-          ) : (
-            <>
-              <input
-                id={id}
-                name={name}
-                placeholder={placeholder}
-                type={fieldType}
-                maxLength={maxLength || 255}
-                className={`inputForm inputText ${className}`}
-                readOnly={readOnly}
-                value={this.state.value}
-                onChange={async (event) => {
-                  this.handlerOnchangeValue(event);
-                  if (onChange) {
-                    onChange(event);
-                  }
-                }}
-              />
-            </>
-          )}
+          <TextareaStyled
+            id={id}
+            name={name}
+            placeholder={placeholder}
+            className={`inputForm inputTextarea ${className}`}
+            readOnly={readOnly}
+            rows={rows || 5}
+            value={this.state.value}
+            onChange={async (event) => {
+              this.handlerOnchangeValue(event);
+              if (onChange) {
+                onChange(event);
+              }
+            }}
+          />
         </div>
       </div>
     );
   }
 }
 
-InputText.propTypes = {
+InputTextarea.propTypes = {
   field: PropTypes.any,
   form: PropTypes.any,
   placeholder: PropTypes.string,
   id: PropTypes.string.isRequired,
   labelField: PropTypes.string,
-  fieldType: PropTypes.string.isRequired,
   className: PropTypes.string,
   divClassName: PropTypes.string,
   readOnly: PropTypes.bool,
   mandatory: PropTypes.bool,
-  maxLength: PropTypes.number,
   visible: PropTypes.bool,
   tooltip: PropTypes.string,
-  format: PropTypes.string,
-  decimals: PropTypes.number,
   defaultValue: PropTypes.string,
   typeStyleErrorMessage: PropTypes.string,
+  rows: PropTypes.number,
 };
 
-export default InputText;
+export default InputTextarea;

@@ -9,3 +9,6 @@ export { default as InputImageFormik } from "./InputImage/formik";
 
 export { default as InputSelect } from "./InputSelect";
 export { default as InputSelectFormik } from "./InputSelect/formik";
+
+export { default as InputTextarea } from "./InputTextarea";
+export { default as InputTextareaFormik } from "./InputTextarea/formik";

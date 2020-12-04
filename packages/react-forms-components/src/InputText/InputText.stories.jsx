@@ -15,5 +15,3 @@ Simple.args = {
   fieldType: "text",
   placeholder: "Prueba text",
 };
-
-// export const primary = () => <Link variant="primary">{"Link"}</Link>;
