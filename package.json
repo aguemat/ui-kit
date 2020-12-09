@@ -39,6 +39,8 @@
     "raphael": "^2.3.0",
     "jquery": "^3.5.1",
     "treantjs": "^1.0.0",
-    "sweetalert2": "^9.17.1"
+    "sweetalert2": "^9.17.1",
+    "react-table-v6": "^6.8.6",
+    "react-transition-group": "^4.4.1"
   }
 }

@@ -2,11 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Field } from "formik";
 import { CenterContainer, ButtonsContainer } from "./Login.styled";
-import {
-  InputText,
-  InputTextFormik,
-  InputCheck,
-} from "@aguemat/react-forms-components";
+import { InputText, InputTextFormik } from "@aguemat/react-forms-components";
 import { Button, Title } from "@aguemat/react-basic-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 
