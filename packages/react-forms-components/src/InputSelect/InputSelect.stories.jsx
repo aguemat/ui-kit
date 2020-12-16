@@ -22,7 +22,6 @@ Simple.args = {
   optionLabel: "label",
   optionValue: "value",
   options: options,
-  multilanguage: true,
 };
 
 // export const primary = () => <Link variant="primary">{"Link"}</Link>;

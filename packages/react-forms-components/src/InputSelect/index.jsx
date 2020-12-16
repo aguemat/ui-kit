@@ -36,7 +36,6 @@ class InputSelect extends Component {
     if (options && options.length > 0) {
       const newOptions = options.map((op) => {
         let dat = null;
-        console.log("OPTIONS", this.props);
         if (multilanguage) {
           dat = {
             value: op[optionValue],
