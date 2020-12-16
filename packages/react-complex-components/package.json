@@ -1,6 +1,6 @@
 {
   "name": "@aguemat/react-complex-components",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Complex react componets",
   "private": false,
   "keywords": [],
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@aguemat/react-basic-components": "^1.0.7",
-    "@aguemat/react-forms-components": "^1.0.11",
+    "@aguemat/react-forms-components": "^1.0.12",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "yup": "^0.31.0"
