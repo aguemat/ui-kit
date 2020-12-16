@@ -2,14 +2,14 @@ import styled, { css } from "styled-components";
 import { Col } from "react-bootstrap";
 
 export const ColContainer = styled(Col)`
-  ${({ classMovile, itemPositionType }) => {
-    if (classMovile) {
-      if (itemPositionType && itemPositionType === "first-item") {
+  ${({ classmovile, itempositiontype }) => {
+    if (classmovile) {
+      if (itempositiontype && itempositiontype === "first-item") {
         return css`
           padding-right: 15px !important;
           margin-bottom: 15px;
         `;
-      } else if (itemPositionType && itemPositionType === "last-item") {
+      } else if (itempositiontype && itempositiontype === "last-item") {
         return css`
           padding-left: 15px !important;
           margin-bottom: 15px;
@@ -22,15 +22,15 @@ export const ColContainer = styled(Col)`
         `;
       }
     } else {
-      if (itemPositionType && itemPositionType === "first-item") {
+      if (itempositiontype && itempositiontype === "first-item") {
         return css`
           padding-right: 7.5px !important;
         `;
-      } else if (itemPositionType && itemPositionType === "last-item") {
+      } else if (itempositiontype && itempositiontype === "last-item") {
         return css`
           padding-left: 7.5px !important;
         `;
-      } else if (itemPositionType && itemPositionType === "normal-item") {
+      } else if (itempositiontype && itempositiontype === "normal-item") {
         return css`
           padding-right: 7.5px !important;
           padding-left: 7.5px !important;

@@ -25,10 +25,25 @@ class InputSelect extends Component {
   }
 
   parseOptions() {
-    const { options, optionLabel, optionValue } = this.props;
+    const {
+      options,
+      optionLabel,
+      optionValue,
+      multilanguage,
+      translateFunction,
+    } = this.props;
     if (options && options.length > 0) {
       const newOptions = options.map((op) => {
-        const dat = { value: op[optionValue], label: op[optionLabel] };
+        let dat = null;
+        if (multilanguage) {
+          dat = {
+            value: op[optionValue],
+            label: translateFunction(op[optionLabel]),
+          };
+        } else {
+          dat = { value: op[optionValue], label: op[optionLabel] };
+        }
+
         if (
           this.props.field &&
           this.props.field.value &&
@@ -103,6 +118,8 @@ InputSelect.propTypes = {
   tooltip: PropTypes.string,
   optionLabel: PropTypes.string,
   optionValue: PropTypes.string,
+  multilanguage: PropTypes.bool,
+  translateFunction: PropTypes.func,
 };
 
 export default InputSelect;

@@ -28,6 +28,13 @@ export const ButtonStyled = styled(Button)`
         &:active {
           outline: none !important;
         }
+
+        &:disabled:hover {
+          color: ${theme.buttons[variant].color} !important;
+          background-color: ${theme.buttons[variant]
+            .backgroundColor} !important;
+          border-color: ${theme.buttons[variant].borderColor} !important;
+        }
       `;
     } else {
       return css``;

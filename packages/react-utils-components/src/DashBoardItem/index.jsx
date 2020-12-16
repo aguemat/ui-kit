@@ -14,7 +14,7 @@ const DashboardItem = (props) => {
     numColsXs,
     numColsMd,
     numColsLg,
-    itemPositionType,
+    itempositiontype,
     titleClassName,
     titleSize,
     title,
@@ -26,9 +26,9 @@ const DashboardItem = (props) => {
   } = props;
 
   const width = window.innerWidth;
-  let classMovile = false;
+  let classmovile = false;
   if (width < 576) {
-    classMovile = true;
+    classmovile = true;
   }
 
   return (
@@ -36,8 +36,8 @@ const DashboardItem = (props) => {
       xs={numColsXs}
       md={numColsMd}
       lg={numColsLg}
-      itemPositionType={itemPositionType}
-      classMovile={classMovile}
+      itempositiontype={itempositiontype}
+      classmovile={classmovile}
     >
       <ItemContainer
         height={height}
@@ -56,7 +56,7 @@ const DashboardItem = (props) => {
 };
 
 DashboardItem.propTypes = {
-  itemPositionType: PropTypes.string,
+  itempositiontype: PropTypes.string,
   title: PropTypes.string,
   icon: PropTypes.string,
   className: PropTypes.string,

@@ -7,17 +7,17 @@ const DashboardRow = (props) => {
 
   const renderItems = (children) => {
     return children.map((item, index) => {
-      let itemPositionType = "";
+      let itempositiontype = "";
       if (index === 0) {
-        itemPositionType = "first-item";
+        itempositiontype = "first-item";
       } else if (index === React.Children.count(children) - 1) {
-        itemPositionType = "last-item";
+        itempositiontype = "last-item";
       } else {
-        itemPositionType = "normal-item";
+        itempositiontype = "normal-item";
       }
       return (
         <React.Fragment key={index}>
-          {React.cloneElement(item, { itemPositionType: itemPositionType })}
+          {React.cloneElement(item, { itempositiontype: itempositiontype })}
         </React.Fragment>
       );
     });
@@ -26,7 +26,7 @@ const DashboardRow = (props) => {
   const renderItem = (children) => {
     return (
       <React.Fragment>
-        {React.cloneElement(children, { itemPositionType: null })}
+        {React.cloneElement(children, { itempositiontype: null })}
       </React.Fragment>
     );
   };

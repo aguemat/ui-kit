@@ -73,7 +73,6 @@ class ListContainer extends Component {
       const newPag = { ...this.state.pagination };
 
       const result = await toList(filter);
-      console.log(filter);
       newPag.pageCount = result?.totalPages || 0;
       newPag.page = result?.page || 0;
       this.setState({
