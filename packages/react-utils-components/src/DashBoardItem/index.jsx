@@ -26,9 +26,9 @@ const DashboardItem = (props) => {
   } = props;
 
   const width = window.innerWidth;
-  let classmovile = false;
+  let classmovile = "false";
   if (width < 576) {
-    classmovile = true;
+    classmovile = "true";
   }
 
   return (

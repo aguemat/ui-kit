@@ -3,7 +3,7 @@ import { Col } from "react-bootstrap";
 
 export const ColContainer = styled(Col)`
   ${({ classmovile, itempositiontype }) => {
-    if (classmovile) {
+    if (classmovile && classmovile === "true") {
       if (itempositiontype && itempositiontype === "first-item") {
         return css`
           padding-right: 15px !important;
