@@ -60,7 +60,11 @@ class InputSelect extends Component {
   }
 
   async handleChange(selectedOption) {
+    const { onChangeValue } = this.props;
     this.setState({ selectedOption });
+    if (onChangeValue) {
+      onChangeValue(selectedOption.value);
+    }
   }
 
   render() {
@@ -124,6 +128,7 @@ InputSelect.propTypes = {
   multilanguage: PropTypes.bool,
   translateFunction: PropTypes.func,
   readOnly: PropTypes.bool,
+  onChangeValue: PropTypes.func,
 };
 
 export default InputSelect;
