@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Select from "react-select";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ready } from "jquery";
 
 class InputSelect extends Component {
   constructor(props) {
@@ -40,6 +41,12 @@ class InputSelect extends Component {
             value: op[optionValue],
             label: translateFunction(op[optionLabel]),
           };
+          console.log(
+            "OPTIONS",
+            translateFunction,
+            dat,
+            translateFunction(op[optionLabel])
+          );
         } else {
           dat = { value: op[optionValue], label: op[optionLabel] };
         }
@@ -72,6 +79,7 @@ class InputSelect extends Component {
       mandatory,
       visible,
       tooltip,
+      readOnly,
     } = this.props;
 
     return (
@@ -100,6 +108,7 @@ class InputSelect extends Component {
             onChange={(val, event) => this.handleChange(val, event)}
             options={this.state.options}
             placeholder={placeholder}
+            isDisabled={readOnly}
           />
         </div>
       </div>
@@ -120,6 +129,7 @@ InputSelect.propTypes = {
   optionValue: PropTypes.string,
   multilanguage: PropTypes.bool,
   translateFunction: PropTypes.func,
+  readOnly: PropTypes.bool,
 };
 
 export default InputSelect;
