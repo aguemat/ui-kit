@@ -24,6 +24,24 @@ class InputSelect extends Component {
     if (prevProps.options !== this.props.options) {
       this.parseOptions();
     }
+    if (prevProps.field.value !== this.props.field.value) {
+      this.setValue(this.props.field.value);
+    }
+  }
+
+  setValue(newValue) {
+    const {
+      form,
+      field: { name },
+    } = this.props;
+
+    const newSelection = this.state.options.find(
+      (elememnt) => elememnt.value === newValue
+    );
+    if (newSelection) {
+      form.setFieldValue(name, newSelection.value);
+      this.setState({ selectedOption: newSelection });
+    }
   }
 
   parseOptions() {
