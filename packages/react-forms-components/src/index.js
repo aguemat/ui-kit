@@ -12,3 +12,6 @@ export { default as InputSelectFormik } from "./InputSelect/formik";
 
 export { default as InputTextarea } from "./InputTextarea";
 export { default as InputTextareaFormik } from "./InputTextarea/formik";
+
+export { default as InputRadioButtonGroup } from "./InputRadioButtonGroup";
+export { default as InputRadioButtonGroupFormik } from "./InputRadioButtonGroup/formik";
