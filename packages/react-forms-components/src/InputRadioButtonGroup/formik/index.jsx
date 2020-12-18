@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Select from "react-select";
+import { ErrorMessage } from "formik";
+import TextErrorMessage from "../../TextErrorMessage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class InputSelect extends Component {
@@ -18,20 +19,29 @@ class InputSelect extends Component {
     this.parseOptions();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.options !== this.props.options) {
       this.parseOptions();
     }
-    if (prevState.selectedOption.value !== this.state.selectedOption.value) {
-      this.setValue(this.state.selectedOption.value);
+    if (
+      this.props.field.value &&
+      prevProps.field.value !== this.props.field.value
+    ) {
+      this.setValue(this.props.field.value);
     }
   }
 
   setValue(newValue) {
+    const {
+      form,
+      field: { name },
+    } = this.props;
+
     const newSelection = this.state.options.find(
       (elememnt) => elememnt.value === newValue
     );
     if (newSelection) {
+      form.setFieldValue(name, newSelection.value);
       this.setState({ selectedOption: newSelection });
     }
   }
@@ -55,7 +65,6 @@ class InputSelect extends Component {
         } else {
           dat = { value: op[optionValue], label: op[optionLabel] };
         }
-
         if (
           this.props.field &&
           this.props.field.value &&
@@ -70,24 +79,29 @@ class InputSelect extends Component {
     }
   }
 
-  async handleChange(selectedOption) {
-    const { onChangeValue } = this.props;
-    this.setState({ selectedOption });
+  async handleChange(selectedOption, event) {
+    const {
+      form,
+      field: { name },
+      onChangeValue,
+    } = this.props;
     if (onChangeValue) {
       onChangeValue(selectedOption.value);
     }
+    form.setFieldValue(name, selectedOption.value);
+    this.setState({ selectedOption });
   }
 
   render() {
     const {
-      name,
+      field: { name },
       labelField,
-      placeholder,
       id,
       divClassName,
       mandatory,
       visible,
       tooltip,
+      typeStyleErrorMessage,
       readOnly,
     } = this.props;
 
@@ -111,28 +125,51 @@ class InputSelect extends Component {
           </label>
         </div>
         <div className={`${divClassName}`}>
-          <Select
-            name={name}
-            value={this.state.selectedOption}
-            onChange={(val, event) => this.handleChange(val, event)}
-            options={this.state.options}
-            placeholder={placeholder}
-            isDisabled={readOnly}
-          />
+          {this.state.options && (
+            <>
+              {this.state.options.map((op) => {
+                return (
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name={name}
+                      id={id}
+                      value={op.value}
+                      disabled={readOnly}
+                      checked={
+                        this.state.selectedOption &&
+                        this.state.selectedOption.value === op.value
+                      }
+                      onChange={(event) => this.handleChange(op, event)}
+                    />
+                    <label class="form-check-label" for={id}>
+                      {op.label}
+                    </label>
+                  </div>
+                );
+              })}
+            </>
+          )}
         </div>
+        <ErrorMessage
+          name={name}
+          component={TextErrorMessage}
+          type={typeStyleErrorMessage || "default"}
+        />
       </div>
     );
   }
 }
 
 InputSelect.propTypes = {
+  field: PropTypes.any,
   id: PropTypes.string,
   labelField: PropTypes.string,
   divClassName: PropTypes.string,
   visible: PropTypes.bool,
   mandatory: PropTypes.bool,
   options: PropTypes.any,
-  placeholder: PropTypes.string,
   tooltip: PropTypes.string,
   optionLabel: PropTypes.string,
   optionValue: PropTypes.string,

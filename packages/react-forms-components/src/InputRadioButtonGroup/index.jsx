@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Select from "react-select";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class InputSelect extends Component {
+class InputRadio extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,10 @@ class InputSelect extends Component {
     if (prevProps.options !== this.props.options) {
       this.parseOptions();
     }
-    if (prevState.selectedOption.value !== this.state.selectedOption.value) {
+    if (
+      this.state.selectedOption &&
+      prevState.selectedOption !== this.state.selectedOption
+    ) {
       this.setValue(this.state.selectedOption.value);
     }
   }
@@ -82,7 +85,6 @@ class InputSelect extends Component {
     const {
       name,
       labelField,
-      placeholder,
       id,
       divClassName,
       mandatory,
@@ -111,28 +113,45 @@ class InputSelect extends Component {
           </label>
         </div>
         <div className={`${divClassName}`}>
-          <Select
-            name={name}
-            value={this.state.selectedOption}
-            onChange={(val, event) => this.handleChange(val, event)}
-            options={this.state.options}
-            placeholder={placeholder}
-            isDisabled={readOnly}
-          />
+          {this.state.options && (
+            <>
+              {this.state.options.map((op) => {
+                return (
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name={name}
+                      id={id}
+                      value={op.value}
+                      disabled={readOnly}
+                      checked={
+                        this.state.selectedOption &&
+                        this.state.selectedOption.value === op.value
+                      }
+                      onChange={(event) => this.handleChange(op, event)}
+                    />
+                    <label class="form-check-label" for={id}>
+                      {op.label}
+                    </label>
+                  </div>
+                );
+              })}
+            </>
+          )}
         </div>
       </div>
     );
   }
 }
 
-InputSelect.propTypes = {
+InputRadio.propTypes = {
   id: PropTypes.string,
   labelField: PropTypes.string,
   divClassName: PropTypes.string,
   visible: PropTypes.bool,
   mandatory: PropTypes.bool,
   options: PropTypes.any,
-  placeholder: PropTypes.string,
   tooltip: PropTypes.string,
   optionLabel: PropTypes.string,
   optionValue: PropTypes.string,
@@ -142,4 +161,4 @@ InputSelect.propTypes = {
   onChangeValue: PropTypes.func,
 };
 
-export default InputSelect;
+export default InputRadio;
